@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		FD8ECC6726652D3C00E71718 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8ECC6626652D3C00E71718 /* AppDelegate.swift */; };
-		FD8ECC6926652D3C00E71718 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8ECC6826652D3C00E71718 /* ViewController.swift */; };
 		FD8ECC6B26652D3D00E71718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8ECC6A26652D3D00E71718 /* Assets.xcassets */; };
 		FD8ECC6E26652D3D00E71718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8ECC6C26652D3D00E71718 /* Main.storyboard */; };
 		FD8ECC7A26652D3D00E71718 /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8ECC7926652D3D00E71718 /* EssentialFeedTests.swift */; };
 		FD8ECC9526652DE300E71718 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8ECC9326652DE300E71718 /* FeedLoader.swift */; };
 		FD8ECC9626652DE300E71718 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8ECC9426652DE300E71718 /* FeedItem.swift */; };
+		FDFCFF522669C8D7004C487D /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFCFF512669C8D7004C487D /* RemoteFeedLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,6 @@
 /* Begin PBXFileReference section */
 		FD8ECC6326652D3C00E71718 /* EssentialFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8ECC6626652D3C00E71718 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD8ECC6826652D3C00E71718 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FD8ECC6A26652D3D00E71718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD8ECC6D26652D3D00E71718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD8ECC6F26652D3D00E71718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,6 +38,7 @@
 		FD8ECC7B26652D3D00E71718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8ECC9326652DE300E71718 /* FeedLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		FD8ECC9426652DE300E71718 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		FDFCFF512669C8D7004C487D /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				FD8ECC6626652D3C00E71718 /* AppDelegate.swift */,
-				FD8ECC6826652D3C00E71718 /* ViewController.swift */,
+				FDFCFF532669C8DE004C487D /* Feed API */,
 				FD8ECC9226652DE300E71718 /* FeedFeature */,
 				FD8ECC6A26652D3D00E71718 /* Assets.xcassets */,
 				FD8ECC6C26652D3D00E71718 /* Main.storyboard */,
@@ -107,6 +107,14 @@
 				FD8ECC9426652DE300E71718 /* FeedItem.swift */,
 			);
 			path = FeedFeature;
+			sourceTree = "<group>";
+		};
+		FDFCFF532669C8DE004C487D /* Feed API */ = {
+			isa = PBXGroup;
+			children = (
+				FDFCFF512669C8D7004C487D /* RemoteFeedLoader.swift */,
+			);
+			path = "Feed API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFCFF522669C8D7004C487D /* RemoteFeedLoader.swift in Sources */,
 				FD8ECC9626652DE300E71718 /* FeedItem.swift in Sources */,
 				FD8ECC9526652DE300E71718 /* FeedLoader.swift in Sources */,
-				FD8ECC6926652D3C00E71718 /* ViewController.swift in Sources */,
 				FD8ECC6726652D3C00E71718 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
