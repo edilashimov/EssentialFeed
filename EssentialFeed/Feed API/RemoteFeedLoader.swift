@@ -7,10 +7,12 @@
 
 import Foundation
 
+//MARK: MAIN HTTPCLIENT PROTOCOL
 public protocol HTTPClient {
     func get(from url: URL, completion: @escaping (Error) -> Void)
 }
 
+//MARK: REMOTE FEED LOADER FEATURE
 public final class RemoteFeedLoader {
     private let url: URL
     private let client: HTTPClient
