@@ -60,23 +60,19 @@ class URLSessionHTTPClientTests: XCTestCase {
     }
     
     func test_getFromURL_failsOnAllInvalidRepresentationCases() {
-        let nonHTTPURLResponse = URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-        let anyHTTPURLResponse = HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)
-        let anyData = Data( "any data".utf8)
-        let anyError = NSError(domain: "any error", code: 0)
         
         XCTAssertNotNil(resultErrorFor(data: nil, response: nil, error: nil))
-        XCTAssertNotNil(resultErrorFor(data:nil, response:nonHTTPURLResponse, error: nil))
-        XCTAssertNotNil(resultErrorFor(data:nil, response:anyHTTPURLResponse, error: nil))
-        XCTAssertNotNil(resultErrorFor(data:anyData, response:anyHTTPURLResponse, error: nil))
-        XCTAssertNotNil(resultErrorFor(data:anyData, response:nil, error: anyError))
-        XCTAssertNotNil(resultErrorFor(data:nil, response:nonHTTPURLResponse, error: anyError))
-        XCTAssertNotNil(resultErrorFor(data:nil, response:anyHTTPURLResponse, error: anyError))
-        XCTAssertNotNil(resultErrorFor(data:anyData, response:nonHTTPURLResponse, error: anyError))
-        XCTAssertNotNil(resultErrorFor(data:nil, response:anyHTTPURLResponse, error: anyError))
-        XCTAssertNotNil(resultErrorFor(data:anyData, response:nonHTTPURLResponse, error: nil))
-}
-
+        XCTAssertNotNil(resultErrorFor(data:nil, response:nonHTTPURLResponse(), error: nil))
+        XCTAssertNotNil(resultErrorFor(data:nil, response:anyHTTPURLResponse(), error: nil))
+        XCTAssertNotNil(resultErrorFor(data:anyData(), response:anyHTTPURLResponse(), error: nil))
+        XCTAssertNotNil(resultErrorFor(data:anyData(), response:nil, error: anyNSError()))
+        XCTAssertNotNil(resultErrorFor(data:nil, response:nonHTTPURLResponse(), error: anyNSError()))
+        XCTAssertNotNil(resultErrorFor(data:nil, response:anyHTTPURLResponse(), error: anyNSError()))
+        XCTAssertNotNil(resultErrorFor(data:anyData(), response:nonHTTPURLResponse(), error: anyNSError()))
+        XCTAssertNotNil(resultErrorFor(data:nil, response:anyHTTPURLResponse(), error: anyNSError()))
+        XCTAssertNotNil(resultErrorFor(data:anyData(), response:nonHTTPURLResponse(), error: nil))
+    }
+    
     // MARK: Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> URLSessionHTTPClient {
@@ -91,7 +87,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     
     private func resultErrorFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #file, line: UInt = #line) -> Error? {
         URLProtocolStub.stub(data: data, response: response, error: error)
-                
+        
         let exp = expectation(description: "Wait for completion")
         let sut = makeSUT(file: file, line: line)
         
@@ -111,6 +107,21 @@ class URLSessionHTTPClientTests: XCTestCase {
         return receivedError
     }
     
+    private func anyNSError() -> NSError {
+        return NSError(domain: "any error", code: 0)
+    }
+    
+    private func nonHTTPURLResponse() -> URLResponse {
+        return URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+    }
+    private func anyHTTPURLResponse() -> HTTPURLResponse {
+        return HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
+        
+    }
+    private func anyData() -> Data {
+        return Data("any data".utf8)
+    }
+        
     private class URLProtocolStub: URLProtocol {
         private static var stub: Stub?
         private static var requestObserver: ((URLRequest) -> Void)?
