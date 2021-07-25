@@ -19,6 +19,7 @@
 		FD930A4526AC6C050095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD930A4426AC6C050095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift */; };
 		FD930A4726ACA4520095F0E4 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD930A4626ACA4520095F0E4 /* URLSessionHTTPClient.swift */; };
 		FD930A4F26AE04350095F0E4 /* EssentialFeedAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD930A4E26AE04350095F0E4 /* EssentialFeedAPIEndToEndTests.swift */; };
+		FD930A5626AE1D490095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD930A4426AC6C050095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift */; };
 		FDFCFF522669C8D7004C487D /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFCFF512669C8D7004C487D /* RemoteFeedLoader.swift */; };
 /* End PBXBuildFile section */
 
@@ -330,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD930A5626AE1D490095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift in Sources */,
 				FD930A4F26AE04350095F0E4 /* EssentialFeedAPIEndToEndTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
