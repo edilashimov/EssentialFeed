@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD04553826B9DB8E004C6F09 /* CacheFeedUserCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD04553726B9DB8E004C6F09 /* CacheFeedUserCaseTests.swift */; };
 		FD89206C2687A6E100C7E60A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD89206B2687A6E100C7E60A /* HTTPClient.swift */; };
 		FD89206E2687A78500C7E60A /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD89206D2687A78500C7E60A /* FeedItemsMapper.swift */; };
 		FD8920712688FBE200C7E60A /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8920702688FBE200C7E60A /* URLSessionHTTPClientTests.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD04553726B9DB8E004C6F09 /* CacheFeedUserCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUserCaseTests.swift; sourceTree = "<group>"; };
 		FD89206B2687A6E100C7E60A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FD89206D2687A78500C7E60A /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		FD8920702688FBE200C7E60A /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD04553626B9DB75004C6F09 /* Feed Cache */ = {
+			isa = PBXGroup;
+			children = (
+				FD04553726B9DB8E004C6F09 /* CacheFeedUserCaseTests.swift */,
+			);
+			path = "Feed Cache";
+			sourceTree = "<group>";
+		};
 		FD89206F2687C97A00C7E60A /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 		FD8ECC7826652D3D00E71718 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				FD04553626B9DB75004C6F09 /* Feed Cache */,
 				FD89206F2687C97A00C7E60A /* Feed API */,
 				FD8ECC7B26652D3D00E71718 /* Info.plist */,
 			);
@@ -322,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD8ECC7A26652D3D00E71718 /* EssentialFeedTests.swift in Sources */,
+				FD04553826B9DB8E004C6F09 /* CacheFeedUserCaseTests.swift in Sources */,
 				FD8920712688FBE200C7E60A /* URLSessionHTTPClientTests.swift in Sources */,
 				FD930A4526AC6C050095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift in Sources */,
 			);
