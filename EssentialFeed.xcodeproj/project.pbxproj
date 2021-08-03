@@ -101,7 +101,6 @@
 		FD89206F2687C97A00C7E60A /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
-				FD930A4326AC6BE80095F0E4 /* Helpers */,
 				FD8ECC7926652D3D00E71718 /* EssentialFeedTests.swift */,
 				FD8920702688FBE200C7E60A /* URLSessionHTTPClientTests.swift */,
 			);
@@ -137,6 +136,7 @@
 				FD8ECC6A26652D3D00E71718 /* Assets.xcassets */,
 				FD8ECC6C26652D3D00E71718 /* Main.storyboard */,
 				FD8ECC6F26652D3D00E71718 /* Info.plist */,
+				FD930A4326AC6BE80095F0E4 /* Helpers */,
 				FD8ECC7026652D3D00E71718 /* EssentialFeed.entitlements */,
 			);
 			path = EssentialFeed;
