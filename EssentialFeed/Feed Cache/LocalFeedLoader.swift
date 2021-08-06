@@ -8,6 +8,7 @@
 import Foundation
 
 public final class LocalFeedLoader {
+    public typealias SaveResult = Error?
     private let store: FeedStore
     private let currentDate: () -> Date
     

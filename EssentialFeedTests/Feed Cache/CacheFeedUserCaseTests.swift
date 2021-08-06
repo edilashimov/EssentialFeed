@@ -99,7 +99,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
         
-        var receivedResults = [Error?]()
+        var receivedResults = [LocalFeedLoader.SaveResult]()
         sut?.save([uniqueItems()], completion: { receivedResults.append($0)} )
         
         store.completeDeletionSuccessfully()
@@ -110,7 +110,6 @@ class CacheFeedUseCaseTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    
     private func uniqueItems() -> FeedItem {
         return FeedItem(id: UUID(), description: "Any", location: "Any", imageURL: anyURL())
     }
@@ -128,7 +127,6 @@ class CacheFeedUseCaseTests: XCTestCase {
     }
     
     private func expect(_ sut: LocalFeedLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-        
         let exp = expectation(description: "Wait for save completion")
         
         var receivedError: Error?
@@ -152,14 +150,11 @@ class CacheFeedUseCaseTests: XCTestCase {
         enum ReceivedMessage: Equatable {
             case deleteCachedFeed
             case insert([FeedItem], Date)
-            
         }
         
         private(set) var receivedMessages = [ReceivedMessage]()
-        
         var deletionCompletions = [DeletionCompletion]()
         var insertionCompletions = [InsertionCompletion]()
-        
         
         func deleteCachedFeed(completion: @escaping DeletionCompletion) {
             deletionCompletions.append(completion)
@@ -187,4 +182,5 @@ class CacheFeedUseCaseTests: XCTestCase {
             receivedMessages.append(.insert(items, timestamp))
         }
     }
+    
 }
