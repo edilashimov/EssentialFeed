@@ -20,19 +20,25 @@ class LocalFeedLoader {
     func save(_ items: [FeedItem], completion: @escaping (Error?) -> Void) {
         store.deleteCachedFeed { [weak self] error in
             guard let self = self else { return }
-           
+            
             if let cacheDeletionError = error {
                 completion(cacheDeletionError)
             }
             else {
-                self.store.insert(items, timestamp: self.currentDate()) { [weak self] error in
-                    guard self != nil else { return }
-                    completion(error)
-                }
+                self.cache(items, with: completion)
             }
         }
     }
+    
+    private func cache(_ items: [FeedItem], with completion: @escaping (Error?) -> Void) {
+        store.insert(items, timestamp: currentDate()) { [weak self] error in
+            guard self != nil else { return }
+            completion(error)
+        }
+    }
 }
+
+
 
 protocol FeedStore {
     typealias DeletionCompletion = (Error?) -> Void
@@ -72,7 +78,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         let timestamp = Date()
         let items = [uniqueItems(), uniqueItems()]
         let (sut, store) = makeSUT( currentDate: { timestamp })
-
+        
         sut.save(items) { _ in }
         store.completeDeletionSuccessfully()
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(items, timestamp)])
@@ -105,7 +111,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         
         XCTAssertNil(receivedError)
     }
-
+    
     func test_save_failsOnInsertionError() {
         let (sut, store) = makeSUT()
         let insertionError = anyNSError()
@@ -139,7 +145,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         store.completeDeletionSuccessfully()
         sut = nil
         store.completeInsertion(with: anyNSError())
-
+        
         XCTAssertTrue(receivedResults.isEmpty)
     }
     
@@ -162,7 +168,7 @@ class CacheFeedUseCaseTests: XCTestCase {
     }
     
     private func expect(_ sut: LocalFeedLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-       
+        
         let exp = expectation(description: "Wait for save completion")
         
         var receivedError: Error?
@@ -193,7 +199,7 @@ class CacheFeedUseCaseTests: XCTestCase {
         
         var deletionCompletions = [DeletionCompletion]()
         var insertionCompletions = [InsertionCompletion]()
-
+        
         
         func deleteCachedFeed(completion: @escaping DeletionCompletion) {
             deletionCompletions.append(completion)
