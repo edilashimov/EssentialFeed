@@ -21,7 +21,8 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     }
     
     func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
-        
+        let sut = makeSUT()
+        assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
     }
     
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
@@ -64,7 +65,8 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     //MARK: - Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
-        let sut = try! CoreDataFeedStore(bundle: storeBundle)
+        let storeURL = URL(fileURLWithPath: "/dev/null")
+        let sut = try! CoreDataFeedStore(storeURL: storeURL, bundle: storeBundle)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
@@ -76,6 +78,13 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     private func assertThatRetrieveHasNoSideEffectsOnEmptyCache(on sut: FeedStore) {
         expect(sut, toRetrieveTwice: .empty)
     }
-
+    
+    private func assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on sut: FeedStore) {
+        let feed = uniqueImageFeed().local
+        let timestamp = Date()
+       
+        insert((feed: feed, timestamp: timestamp), to: sut)
+        expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
+    }
     
 }
