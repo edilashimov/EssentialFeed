@@ -44,7 +44,8 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     }
     
     func test_delete_deliversNoErrorOnEmptyCache() {
-        
+        let sut = makeSUT()
+        assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
     }
     
     func test_delete_hasNoSideEffectsOnEmptyCache() {
@@ -116,5 +117,10 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         insert((latestFeed, latestTimestamp), to: sut)
 
         expect(sut, toRetrieve: .found(feed: latestFeed, timestamp: latestTimestamp))
+    }
+    
+    private func assertThatDeleteDeliversNoErrorOnEmptyCache(on sut: FeedStore) {
+        let deletionError = deleteCache(from: sut)
+        XCTAssertNil(deletionError, "Expected non-empty cache deletion to succeed")
     }
 }
