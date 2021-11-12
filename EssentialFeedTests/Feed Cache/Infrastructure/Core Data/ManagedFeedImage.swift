@@ -10,13 +10,13 @@ import EssentialFeed
 
 @objc(ManagedFeedImage)
 internal class ManagedFeedImage: NSManagedObject {
-    @NSManaged public var id: UUID?
-    @NSManaged public var imageDescription: String?
-    @NSManaged public var location: String?
-    @NSManaged public var url: URL
-    @NSManaged public var cache: ManagedCache
+    @NSManaged internal var id: UUID?
+    @NSManaged internal var imageDescription: String?
+    @NSManaged internal var location: String?
+    @NSManaged internal var url: URL
+    @NSManaged internal var cache: ManagedCache
     
-    static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
+    internal static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
         return NSOrderedSet(array: localFeed.map { local in
             let managed = ManagedFeedImage(context: context)
             managed.id = local.id
@@ -27,7 +27,7 @@ internal class ManagedFeedImage: NSManagedObject {
         })
     }
 
-    var local: LocalFeedImage {
+    internal var local: LocalFeedImage {
         return LocalFeedImage(id: id!, description: imageDescription, location: location, url: url)
     }
     
