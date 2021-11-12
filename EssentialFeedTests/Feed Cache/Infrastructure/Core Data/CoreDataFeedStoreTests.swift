@@ -26,19 +26,21 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     }
     
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
-        
     }
     
     func test_insert_overridesPreviouslyInsertedCacheValues() {
-        
+        let sut = makeSUT()
+        assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
     }
     
     func test_insert_deliversNoErrorOnNonEmptyCache() {
-        
+        let sut = makeSUT()
+        assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
     }
     
     func test_insert_deliversNoErrorOnEmptyCache() {
-        
+        let sut = makeSUT()
+        assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
     }
     
     func test_delete_deliversNoErrorOnEmptyCache() {
@@ -87,12 +89,32 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
     }
     
-    private func assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: FeedStore) {
-        let sut = makeSUT()
+    private func assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on sut: FeedStore) {
         let feed = uniqueImageFeed().local
         let timestamp = Date()
         
         insert((feed: feed, timestamp: timestamp), to: sut)
         expect(sut, toRetrieveTwice: .found(feed: feed, timestamp: timestamp))
+    }
+    
+    private func assertThatInsertDeliversNoErrorOnEmptyCache(on sut: FeedStore) {
+        let insertionError = insert((uniqueImageFeed().local, Date()), to: sut)
+        XCTAssertNil(insertionError, "Expected to insert cache successfully")
+    }
+    
+    private func assertThatInsertDeliversNoErrorOnNonEmptyCache(on sut: FeedStore) {
+        insert((uniqueImageFeed().local, Date()), to: sut)
+        let insertionError = insert((uniqueImageFeed().local, Date()), to: sut)
+        XCTAssertNil(insertionError, "Expected to override cache successfully")
+    }
+    
+    private func assertThatInsertOverridesPreviouslyInsertedCacheValues(on sut: FeedStore) {
+        insert((uniqueImageFeed().local, Date()), to: sut)
+        
+        let latestFeed = uniqueImageFeed().local
+        let latestTimestamp = Date()
+        insert((latestFeed, latestTimestamp), to: sut)
+
+        expect(sut, toRetrieve: .found(feed: latestFeed, timestamp: latestTimestamp))
     }
 }
