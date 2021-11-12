@@ -59,7 +59,8 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     }
     
     func test_delete_emptiesPreviouslyInsertedCache() {
-        
+        let sut = makeSUT()
+        assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
     }
     
     func test_storeSideEffects_runSerially() {
@@ -136,5 +137,12 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         let deletionError = deleteCache(from: sut)
         
         XCTAssertNil(deletionError, "Expected cache deletion to fail")
+    }
+    
+    private func assertThatDeleteEmptiesPreviouslyInsertedCache(on sut: FeedStore) {
+        insert((feed: uniqueImageFeed().local, timestamp: Date()), to: sut)
+        deleteCache(from: sut)
+        
+        expect(sut, toRetrieve: .empty)
     }
 }
