@@ -5,7 +5,6 @@
 //  Created by Edil Ashimov on 11/9/21.
 //
 
-import EssentialFeed
 import CoreData
 
 public final class CoreDataFeedStore: FeedStore {
