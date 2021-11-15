@@ -172,4 +172,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         
         XCTAssertEqual([op1, op2, op3], completedOperationsInOrder, "Expected side-effects to run serially but operations finised in the wrong order")
     }
+    
+
+    
 }
