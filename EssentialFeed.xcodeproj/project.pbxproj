@@ -197,8 +197,8 @@
 		FD3560362741DCDC00E3B852 /* EssentialFeedCacheIntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
-				FD3560352741DC9200E3B852 /* EssentialFeedCacheIntegrationTests.plist */,
 				FD3560372741DD8C00E3B852 /* EssentialFeedCacheIntegrationTests.swift */,
+				FD3560352741DC9200E3B852 /* EssentialFeedCacheIntegrationTests.plist */,
 			);
 			path = EssentialFeedCacheIntegrationTests;
 			sourceTree = "<group>";
