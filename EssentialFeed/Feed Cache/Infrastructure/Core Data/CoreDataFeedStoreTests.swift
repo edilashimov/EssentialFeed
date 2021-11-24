@@ -79,11 +79,11 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     }
     
     private func assertThatRetrieveDeliversOnEmptyCache(on sut: FeedStore) {
-        expect(sut, toRetrieve: .success(.empty))
+        expect(sut, toRetrieve: .success(.none))
     }
     
     private func assertThatRetrieveHasNoSideEffectsOnEmptyCache(on sut: FeedStore) {
-        expect(sut, toRetrieveTwice: .success(.empty))
+        expect(sut, toRetrieveTwice: .success(.none))
     }
     
     private func assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on sut: FeedStore) {
@@ -91,7 +91,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         let timestamp = Date()
        
         insert((feed: feed, timestamp: timestamp), to: sut)
-        expect(sut, toRetrieve: .success(.found(feed: feed, timestamp: timestamp)))
+        expect(sut, toRetrieve: .success(.some(CachedFeed(feed: feed, timestamp: timestamp))))
     }
     
     private func assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on sut: FeedStore) {
@@ -99,7 +99,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         let timestamp = Date()
         
         insert((feed: feed, timestamp: timestamp), to: sut)
-        expect(sut, toRetrieveTwice: .success(.found(feed: feed, timestamp: timestamp)))
+        expect(sut, toRetrieveTwice: .success(.some(CachedFeed(feed: feed, timestamp: timestamp))))
     }
     
     private func assertThatInsertDeliversNoErrorOnEmptyCache(on sut: FeedStore) {
@@ -120,7 +120,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         let latestTimestamp = Date()
         insert((latestFeed, latestTimestamp), to: sut)
 
-        expect(sut, toRetrieve: .success(.found(feed: latestFeed, timestamp: latestTimestamp)))
+        expect(sut, toRetrieve: .success(.some(CachedFeed(feed: latestFeed, timestamp: latestTimestamp))))
     }
     
     private func assertThatDeleteDeliversNoErrorOnEmptyCache(on sut: FeedStore) {
@@ -130,7 +130,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     
     private func assertThatDeleteHasNoSideEffectsOnEmptyCache(on sut: FeedStore) {
         deleteCache(from: sut)
-        expect(sut, toRetrieve: .success(.empty))
+        expect(sut, toRetrieve: .success(.none))
     }
     
     private func assertThatDeleteDeliversNoErrorOnNonEmptyCache(on sut: FeedStore) {
@@ -144,7 +144,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         insert((feed: uniqueImageFeed().local, timestamp: Date()), to: sut)
         deleteCache(from: sut)
         
-        expect(sut, toRetrieve: .success(.empty))
+        expect(sut, toRetrieve: .success(.none))
     }
     
     private func assertThatSideEffectsRunSerially(on sut: FeedStore) {
