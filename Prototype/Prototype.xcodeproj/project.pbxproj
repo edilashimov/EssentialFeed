@@ -15,6 +15,8 @@
 		FD429832275E99720081F166 /* PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD429831275E99720081F166 /* PrototypeUITests.swift */; };
 		FD429834275E99720081F166 /* PrototypeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD429833275E99720081F166 /* PrototypeUITestsLaunchTests.swift */; };
 		FDD0E40F2763B45F001CEF1E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E40E2763B45F001CEF1E /* FeedViewController.swift */; };
+		FDD0E4112763BF39001CEF1E /* FeedImageViewModel+PrototypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E4102763BF39001CEF1E /* FeedImageViewModel+PrototypeData.swift */; };
+		FDD0E4132763C005001CEF1E /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E4122763C005001CEF1E /* FeedImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		FD429831275E99720081F166 /* PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITests.swift; sourceTree = "<group>"; };
 		FD429833275E99720081F166 /* PrototypeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FDD0E40E2763B45F001CEF1E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		FDD0E4102763BF39001CEF1E /* FeedImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
+		FDD0E4122763C005001CEF1E /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				FD429810275E996E0081F166 /* AppDelegate.swift */,
 				FDD0E40E2763B45F001CEF1E /* FeedViewController.swift */,
+				FDD0E4102763BF39001CEF1E /* FeedImageViewModel+PrototypeData.swift */,
+				FDD0E4122763C005001CEF1E /* FeedImageCell.swift */,
 				FD429816275E996E0081F166 /* Main.storyboard */,
 				FD429819275E99710081F166 /* Assets.xcassets */,
 				FD42981B275E99710081F166 /* LaunchScreen.storyboard */,
@@ -255,6 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD0E4112763BF39001CEF1E /* FeedImageViewModel+PrototypeData.swift in Sources */,
+				FDD0E4132763C005001CEF1E /* FeedImageCell.swift in Sources */,
 				FDD0E40F2763B45F001CEF1E /* FeedViewController.swift in Sources */,
 				FD429811275E996E0081F166 /* AppDelegate.swift in Sources */,
 			);
