@@ -14,6 +14,7 @@
 		FD429828275E99720081F166 /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD429827275E99720081F166 /* PrototypeTests.swift */; };
 		FD429832275E99720081F166 /* PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD429831275E99720081F166 /* PrototypeUITests.swift */; };
 		FD429834275E99720081F166 /* PrototypeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD429833275E99720081F166 /* PrototypeUITestsLaunchTests.swift */; };
+		FDD0E40F2763B45F001CEF1E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E40E2763B45F001CEF1E /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		FD42982D275E99720081F166 /* PrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD429831275E99720081F166 /* PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITests.swift; sourceTree = "<group>"; };
 		FD429833275E99720081F166 /* PrototypeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FDD0E40E2763B45F001CEF1E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				FD429810275E996E0081F166 /* AppDelegate.swift */,
+				FDD0E40E2763B45F001CEF1E /* FeedViewController.swift */,
 				FD429816275E996E0081F166 /* Main.storyboard */,
 				FD429819275E99710081F166 /* Assets.xcassets */,
 				FD42981B275E99710081F166 /* LaunchScreen.storyboard */,
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD0E40F2763B45F001CEF1E /* FeedViewController.swift in Sources */,
 				FD429811275E996E0081F166 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +435,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGG4KWDJ9Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Prototype/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -458,6 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CGG4KWDJ9Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Prototype/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
