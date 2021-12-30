@@ -16,8 +16,8 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FD8ECC6226652D3C00E71718"
-            BuildableName = "EssentialFeed.app"
+            BlueprintIdentifier = "FDF660A0277D7484003BD0BB"
+            BuildableName = "EssentialFeed.framework"
             BlueprintName = "EssentialFeed"
             ReferencedContainer = "container:EssentialFeed.xcodeproj">
          </BuildableReference>

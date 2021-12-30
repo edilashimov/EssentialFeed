@@ -5,7 +5,6 @@
 //  Created by Edil Ashimov on 6/27/21.
 //
 
-import EssentialFeed
 import XCTest
 
 class URLSessionHTTPClientTests: XCTestCase {
