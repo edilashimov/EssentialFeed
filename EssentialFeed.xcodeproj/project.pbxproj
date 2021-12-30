@@ -18,7 +18,6 @@
 		FD930A5626AE1D490095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD930A4426AC6C050095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift */; };
 		FDEB91BD26E2A54100C22894 /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEB91BC26E2A54100C22894 /* FeedStoreSpecs.swift */; };
 		FDEB91BF26E2A75000C22894 /* XCTestCase+FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEB91BE26E2A75000C22894 /* XCTestCase+FeedStoreSpecs.swift */; };
-		FDF660A4277D7485003BD0BB /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF660A3277D7485003BD0BB /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FDF660A8277D7508003BD0BB /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8C182926C57B77004C8421 /* FeedCachePolicy.swift */; };
 		FDF660A9277D7508003BD0BB /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3A462726BD9ACA00030129 /* LocalFeedLoader.swift */; };
 		FDF660AA277D7508003BD0BB /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7025526C194D900C8379E /* LocalFeedImage.swift */; };
@@ -117,7 +116,6 @@
 		FDEB91BC26E2A54100C22894 /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
 		FDEB91BE26E2A75000C22894 /* XCTestCase+FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		FDF660A1277D7484003BD0BB /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDF660A3277D7485003BD0BB /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		FDFBCE90277D2FDB005DAF73 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFBCE92277D2FDB005DAF73 /* EssentialFeediOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeediOS.h; sourceTree = "<group>"; };
 		FDFBCE93277D2FDB005DAF73 /* EssentialFeediOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentialFeediOS.docc; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 				FD3560362741DCDC00E3B852 /* EssentialFeedCacheIntegrationTests */,
 				FDFBCE91277D2FDB005DAF73 /* EssentialFeediOS */,
 				FDFBCE9D277D2FDD005DAF73 /* EssentialFeediOSTests */,
-				FDF660A2277D7485003BD0BB /* EssentialFeed */,
 				FD8ECC6426652D3C00E71718 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -327,14 +324,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		FDF660A2277D7485003BD0BB /* EssentialFeed */ = {
-			isa = PBXGroup;
-			children = (
-				FDF660A3277D7485003BD0BB /* EssentialFeed.h */,
-			);
-			path = EssentialFeed;
-			sourceTree = "<group>";
-		};
 		FDFBCE91277D2FDB005DAF73 /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +360,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDF660A4277D7485003BD0BB /* EssentialFeed.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,12 +518,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				FDF660A0277D7484003BD0BB /* EssentialFeed */,
 				FD8ECC7426652D3D00E71718 /* EssentialFeedTests */,
 				FD930A4B26AE04350095F0E4 /* EssentialFeedAPIEndToEndTests */,
 				FD3560282741DC9100E3B852 /* EssentialFeedCacheIntegrationTests */,
 				FDFBCE8F277D2FDB005DAF73 /* EssentialFeediOS */,
 				FDFBCE98277D2FDD005DAF73 /* EssentialFeediOSTests */,
-				FDF660A0277D7484003BD0BB /* EssentialFeed */,
 			);
 		};
 /* End PBXProject section */
@@ -1026,6 +1014,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1059,6 +1048,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1086,6 +1076,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eddyash.EssentialFeediOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1109,6 +1100,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = eddyash.EssentialFeediOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
