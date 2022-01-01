@@ -61,6 +61,8 @@
 		FDF66128277E24E6003BD0BB /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8ECC9326652DE300E71718 /* FeedLoader.swift */; };
 		FDF66129277E2522003BD0BB /* FeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8ECC9426652DE300E71718 /* FeedImage.swift */; };
 		FDF6612A277E26A6003BD0BB /* XCTCaseTrackMemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD930A4426AC6C050095F0E4 /* XCTCaseTrackMemoryLeakTracking.swift */; };
+		FDF6612C2780DB15003BD0BB /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6612B2780DB15003BD0BB /* FeedImageCell.swift */; };
+		FDF6612F2780DB61003BD0BB /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6612B2780DB15003BD0BB /* FeedImageCell.swift */; };
 		FDFBCE94277D2FDB005DAF73 /* EssentialFeediOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = FDFBCE93277D2FDB005DAF73 /* EssentialFeediOS.docc */; };
 		FDFBCE9A277D2FDD005DAF73 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFBCE90277D2FDB005DAF73 /* EssentialFeediOS.framework */; };
 		FDFBCE9F277D2FDD005DAF73 /* EssentialFeediOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFBCE9E277D2FDD005DAF73 /* EssentialFeediOSTests.swift */; };
@@ -142,6 +144,7 @@
 		FDEB91BC26E2A54100C22894 /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
 		FDEB91BE26E2A75000C22894 /* XCTestCase+FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		FDF660A1277D7484003BD0BB /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF6612B2780DB15003BD0BB /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		FDFBCE90277D2FDB005DAF73 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFBCE92277D2FDB005DAF73 /* EssentialFeediOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeediOS.h; sourceTree = "<group>"; };
 		FDFBCE93277D2FDB005DAF73 /* EssentialFeediOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentialFeediOS.docc; sourceTree = "<group>"; };
@@ -364,6 +367,7 @@
 			children = (
 				FDFBCE92277D2FDB005DAF73 /* EssentialFeediOS.h */,
 				FDFBCE93277D2FDB005DAF73 /* EssentialFeediOS.docc */,
+				FDF6612B2780DB15003BD0BB /* FeedImageCell.swift */,
 			);
 			path = EssentialFeediOS;
 			sourceTree = "<group>";
@@ -695,6 +699,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDFBCE94277D2FDB005DAF73 /* EssentialFeediOS.docc in Sources */,
+				FDF6612C2780DB15003BD0BB /* FeedImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +708,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF6612A277E26A6003BD0BB /* XCTCaseTrackMemoryLeakTracking.swift in Sources */,
+				FDF6612F2780DB61003BD0BB /* FeedImageCell.swift in Sources */,
 				FDFBCE9F277D2FDD005DAF73 /* EssentialFeediOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1108,6 +1114,7 @@
 		FDFBCEA3277D2FDD005DAF73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1132,6 +1139,7 @@
 		FDFBCEA4277D2FDD005DAF73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
