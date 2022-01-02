@@ -5,7 +5,7 @@
 //  Created by Edil Ashimov on 1/2/22.
 //
 
-import Foundation
+import UIKit
 
 extension UIRefreshControl {
     func simulatePullToRefresh() {
