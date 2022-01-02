@@ -8,7 +8,7 @@
 import UIKit
 import EssentialFeed
 
-final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
+public class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     
     private var feedLoader: FeedLoader?
     private var imageLoader: FeedImageDataLoader?
@@ -21,7 +21,7 @@ final class FeedViewController: UITableViewController, UITableViewDataSourcePref
         self.imageLoader = imageLoader
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         refreshControl = UIRefreshControl()

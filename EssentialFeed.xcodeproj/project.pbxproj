@@ -307,11 +307,19 @@
 				FD35CD4127822ED500811907 /* UIButton+TestHelpers.swift */,
 				FD35CD4327822F1B00811907 /* UIControl+TestHelpers.swift */,
 				FD35CD4E2782322800811907 /* FeedImageCell+TestHelpers.swift */,
+				FD35CD542782344F00811907 /* Controllers */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FD35CD542782344F00811907 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				FD35CD4627822FEC00811907 /* FeedViewController+TestHelpers.swift */,
 				FD35CD502782327B00811907 /* FeedViewControllerTests+LoaderSpy.swift */,
 				FD35CD522782336300811907 /* FeedViewControllerTests+Assertions.swift */,
 			);
-			path = Helpers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FD3A462626BD9AB300030129 /* Feed Cache */ = {
