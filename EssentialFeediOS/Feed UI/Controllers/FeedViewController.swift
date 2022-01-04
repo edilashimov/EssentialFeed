@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EssentialFeed 
 
 public class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     
@@ -26,7 +25,6 @@ public class FeedViewController: UITableViewController, UITableViewDataSourcePre
         tableView.prefetchDataSource = self
         refreshController?.refresh()
         refreshControl = refreshController?.view
-
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
