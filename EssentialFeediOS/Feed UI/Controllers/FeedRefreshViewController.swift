@@ -27,7 +27,6 @@ final class FeedRefreshViewController: NSObject {
              } else {
                 view?.endRefreshing()
              }
-             view?.endRefreshing()
          }
          view.addTarget(self, action: #selector(refresh), for: .valueChanged)
          return view
