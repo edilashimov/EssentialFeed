@@ -21,10 +21,9 @@ final class FeedImageCellController: FeedImageView {
     }
     
     func view(in tableView: UITableView) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedImageCell") as! FeedImageCell
-        self.cell = cell
-        delegate.didRequestImage()
-        return cell
+        cell = tableView.dequeueReusableCell()
+         delegate.didRequestImage()
+         return cell!
     }
     
     func preload() {
