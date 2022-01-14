@@ -90,6 +90,8 @@
 		FDF9C4DC279216D40080EAE0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF9C4DB279216D40080EAE0 /* Feed.storyboard */; };
 		FDF9C4DE279223010080EAE0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF9C4DB279216D40080EAE0 /* Feed.storyboard */; };
 		FDF9C4E22792390A0080EAE0 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF9C4E12792390A0080EAE0 /* UITableView+Dequeueing.swift */; };
+		FDF9C4E3279239630080EAE0 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF9C4E12792390A0080EAE0 /* UITableView+Dequeueing.swift */; };
+		FDF9C4E4279239650080EAE0 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF9C4E12792390A0080EAE0 /* UITableView+Dequeueing.swift */; };
 		FDFBCE9A277D2FDD005DAF73 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFBCE90277D2FDB005DAF73 /* EssentialFeediOS.framework */; };
 		FDFBCE9F277D2FDD005DAF73 /* EssentialFeediOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFBCE9E277D2FDD005DAF73 /* EssentialFeediOSTests.swift */; };
 /* End PBXBuildFile section */
@@ -811,6 +813,7 @@
 				FDF660DA277D776F003BD0BB /* LocalFeedImage.swift in Sources */,
 				FDF6611C277D7EEB003BD0BB /* FeedStore.xcdatamodeld in Sources */,
 				FDF66128277E24E6003BD0BB /* FeedLoader.swift in Sources */,
+				FDF9C4E4279239650080EAE0 /* UITableView+Dequeueing.swift in Sources */,
 				FDF660C8277D7658003BD0BB /* RemoteFeedItem.swift in Sources */,
 				FDF66129277E2522003BD0BB /* FeedImage.swift in Sources */,
 			);
@@ -840,6 +843,7 @@
 				FDF6612A277E26A6003BD0BB /* XCTCaseTrackMemoryLeakTracking.swift in Sources */,
 				FD35CD982783B0E600811907 /* FeedUIComposer.swift in Sources */,
 				FD35CD512782327B00811907 /* FeedViewControllerTests+LoaderSpy.swift in Sources */,
+				FDF9C4E3279239630080EAE0 /* UITableView+Dequeueing.swift in Sources */,
 				FD35CD4027822E9E00811907 /* UIRefreshControl+TestHelpers.swift in Sources */,
 				FDF661322781040D003BD0BB /* UIView+Shimmering.swift in Sources */,
 				FD35CD6827824B3500811907 /* FeedImageCellController.swift in Sources */,
