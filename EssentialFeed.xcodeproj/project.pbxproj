@@ -88,6 +88,7 @@
 		FDF66131278103F0003BD0BB /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF66130278103F0003BD0BB /* UIView+Shimmering.swift */; };
 		FDF661322781040D003BD0BB /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF66130278103F0003BD0BB /* UIView+Shimmering.swift */; };
 		FDF9C4DC279216D40080EAE0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF9C4DB279216D40080EAE0 /* Feed.storyboard */; };
+		FDF9C4DE279223010080EAE0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF9C4DB279216D40080EAE0 /* Feed.storyboard */; };
 		FDFBCE9A277D2FDD005DAF73 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFBCE90277D2FDB005DAF73 /* EssentialFeediOS.framework */; };
 		FDFBCE9F277D2FDD005DAF73 /* EssentialFeediOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFBCE9E277D2FDD005DAF73 /* EssentialFeediOSTests.swift */; };
 /* End PBXBuildFile section */
@@ -726,6 +727,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF9C4DE279223010080EAE0 /* Feed.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
