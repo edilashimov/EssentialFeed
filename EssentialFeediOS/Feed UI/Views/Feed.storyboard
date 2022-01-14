@@ -126,6 +126,7 @@
                         <connections>
                             <outlet property="dataSource" destination="QsT-rc-xJo" id="hfX-37-6r2"/>
                             <outlet property="delegate" destination="QsT-rc-xJo" id="aH2-Re-xMz"/>
+                            <outlet property="prefetchDataSource" destination="QsT-rc-xJo" id="aEa-en-2TV"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Feed" id="OgA-Jr-3iB"/>
@@ -133,19 +134,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
-                            <action selector="refresh" destination="c9g-q7-0nc" eventType="valueChanged" id="ZDf-IL-WjO"/>
+                            <action selector="refresh" destination="QsT-rc-xJo" eventType="valueChanged" id="bMY-WL-Soj"/>
                         </connections>
                     </refreshControl>
-                    <connections>
-                        <outlet property="refreshController" destination="c9g-q7-0nc" id="9rg-ah-Dm2"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tw2-sC-zlz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="c9g-q7-0nc" customClass="FeedRefreshViewController" customModule="EssentialFeediOS" customModuleProvider="target">
-                    <connections>
-                        <outlet property="view" destination="cPm-Lt-1LJ" id="7SG-LY-u7A"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="870" y="-74"/>
         </scene>
