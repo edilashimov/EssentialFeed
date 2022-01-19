@@ -26,12 +26,16 @@ protocol FeedView {
 final class FeedPresenter {
     
     private let feedView: FeedView
-     private let loadingView: FeedLoadingView
-
-     init(feedView: FeedView, loadingView: FeedLoadingView) {
-         self.feedView = feedView
-         self.loadingView = loadingView
-     }
+    private let loadingView: FeedLoadingView
+    
+    static var title: String {
+        return "Feeds"
+    }
+    
+    init(feedView: FeedView, loadingView: FeedLoadingView) {
+        self.feedView = feedView
+        self.loadingView = loadingView
+    }
     
     func didStartLoadingFeed() {
         loadingView.display(FeedLoadingViewModel(isLoading: true))

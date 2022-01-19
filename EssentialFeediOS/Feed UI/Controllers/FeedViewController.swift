@@ -20,7 +20,8 @@ public class FeedViewController: UITableViewController, UITableViewDataSourcePre
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-//        refreshControl?.beginRefreshing()
+        title = FeedPresenter.title
+        refreshControl?.beginRefreshing()
         refresh()
     }
     
