@@ -13,13 +13,18 @@ import EssentialFeediOS
 final class FeedViewControllerTests: XCTestCase {
     
     func test_feedView_hasTitle() {
-         let (sut, _) = makeSUT()
-
-         sut.loadViewIfNeeded()
-
-         XCTAssertEqual(sut.title, "My Feed")
-     }
-       
+        let (sut, _) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        let bundle = Bundle(for: FeedViewController.self)
+        let localizedKey = "FEED_VIEW_TITLE"
+        let localizedTitle = bundle.localizedString(forKey: localizedKey, value: nil, table: "Feed")
+        
+        XCTAssertNotEqual(localizedKey, localizedTitle, "Missing localized string for key: \(localizedKey)")
+        XCTAssertEqual(sut.title, localizedTitle)
+    }
+    
     func test_loadFeedActions_requestFeedFromLoader() {
         let (sut, loader) = makeSUT()
         XCTAssertEqual(loader.loadFeedCallCount, 0, "Expected no loading requests before view is loaded")
@@ -50,23 +55,23 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertFalse(sut.isShowingLoadingIndicator, "Expected no loading indicator once user initiated loading completes with error")
     }
     
-//    func test_loadFeedCompletion_rendersSuccessfullyLoadedFeed() {
-//        let (sut, loader) = makeSUT()
-//        let image0 = makeImage(description: "a description", location: "a location")
-//        let image1 = makeImage(description: nil, location: "another location")
-//        let image2 = makeImage(description: "another description", location: nil)
-//        let image3 = makeImage(description: nil, location: nil)
-//        
-//        sut.loadViewIfNeeded()
-//        assertThat(sut, isRendering: [])
-//        
-//        loader.completeFeedLoading(with: [image0], at: 0)
-//        assertThat(sut, isRendering: [image0])
-//        
-//        sut.simulateUserInitiatedFeedReload()
-//        loader.completeFeedLoading(with: [image0, image1, image2, image3], at: 1)
-//        assertThat(sut, isRendering: [image0, image1, image2, image3])
-//    }
+    //    func test_loadFeedCompletion_rendersSuccessfullyLoadedFeed() {
+    //        let (sut, loader) = makeSUT()
+    //        let image0 = makeImage(description: "a description", location: "a location")
+    //        let image1 = makeImage(description: nil, location: "another location")
+    //        let image2 = makeImage(description: "another description", location: nil)
+    //        let image3 = makeImage(description: nil, location: nil)
+    //
+    //        sut.loadViewIfNeeded()
+    //        assertThat(sut, isRendering: [])
+    //
+    //        loader.completeFeedLoading(with: [image0], at: 0)
+    //        assertThat(sut, isRendering: [image0])
+    //
+    //        sut.simulateUserInitiatedFeedReload()
+    //        loader.completeFeedLoading(with: [image0, image1, image2, image3], at: 1)
+    //        assertThat(sut, isRendering: [image0, image1, image2, image3])
+    //    }
     
     
     func test_loadFeedCompletion_doesNotAlterCurrentRenderingStateOnError() {
@@ -248,15 +253,15 @@ final class FeedViewControllerTests: XCTestCase {
     }
     
     func test_feedImageView_doesNotRenderLoadedImageWhenNotVisibleAnymore() {
-         let (sut, loader) = makeSUT()
-         sut.loadViewIfNeeded()
-         loader.completeFeedLoading(with: [makeImage()])
-
-         let view = sut.simulateFeedImageViewNotVisible(at: 0)
-         loader.completeImageLoading(with: anyImageData())
-
-         XCTAssertNil(view?.renderedImage, "Expected no rendered image when an image load finishes after the view is not visible anymore")
-     }
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+        loader.completeFeedLoading(with: [makeImage()])
+        
+        let view = sut.simulateFeedImageViewNotVisible(at: 0)
+        loader.completeImageLoading(with: anyImageData())
+        
+        XCTAssertNil(view?.renderedImage, "Expected no rendered image when an image load finishes after the view is not visible anymore")
+    }
     
     //MARK: Helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
@@ -272,7 +277,7 @@ final class FeedViewControllerTests: XCTestCase {
     }
     
     private func anyImageData() -> Data {
-         return UIImage.make(withColor: .red).pngData()!
-     }
+        return UIImage.make(withColor: .red).pngData()!
+    }
     
 }
