@@ -98,7 +98,7 @@
 		FDF9C4E3279239630080EAE0 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF9C4E12792390A0080EAE0 /* UITableView+Dequeueing.swift */; };
 		FDF9C4E4279239650080EAE0 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF9C4E12792390A0080EAE0 /* UITableView+Dequeueing.swift */; };
 		FDFBCE9A277D2FDD005DAF73 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFBCE90277D2FDB005DAF73 /* EssentialFeediOS.framework */; };
-		FDFBCE9F277D2FDD005DAF73 /* EssentialFeediOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFBCE9E277D2FDD005DAF73 /* EssentialFeediOSTests.swift */; };
+		FDFBCE9F277D2FDD005DAF73 /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFBCE9E277D2FDD005DAF73 /* FeedUIIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,7 +205,7 @@
 		FDF9C4E12792390A0080EAE0 /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
 		FDFBCE90277D2FDB005DAF73 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFBCE99277D2FDD005DAF73 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDFBCE9E277D2FDD005DAF73 /* EssentialFeediOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeediOSTests.swift; sourceTree = "<group>"; };
+		FDFBCE9E277D2FDD005DAF73 /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
 		FDFCFF512669C8D7004C487D /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -496,7 +496,7 @@
 		FDE3AE552798ADBA00E850E1 /* Feed UI */ = {
 			isa = PBXGroup;
 			children = (
-				FDFBCE9E277D2FDD005DAF73 /* EssentialFeediOSTests.swift */,
+				FDFBCE9E277D2FDD005DAF73 /* FeedUIIntegrationTests.swift */,
 				FD35CD3E27822E6900811907 /* Helpers */,
 			);
 			path = "Feed UI";
@@ -899,7 +899,7 @@
 				FD35CD3D27822E5100811907 /* UIImage+TestHelpers.swift in Sources */,
 				FD35CD4C2782311D00811907 /* FeedImageDataLoader.swift in Sources */,
 				FD9FD602278B42D600B7A5EE /* FeedImagePresenter.swift in Sources */,
-				FDFBCE9F277D2FDD005DAF73 /* EssentialFeediOSTests.swift in Sources */,
+				FDFBCE9F277D2FDD005DAF73 /* FeedUIIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,6 +1035,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1092,6 +1093,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1259,7 +1261,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1293,7 +1295,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1323,7 +1325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1348,7 +1350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

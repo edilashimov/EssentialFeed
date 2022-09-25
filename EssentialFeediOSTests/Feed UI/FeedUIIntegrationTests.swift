@@ -49,6 +49,7 @@ final class FeedUIIntegrationTests: XCTestCase {
         XCTAssertFalse(sut.isShowingLoadingIndicator, "Expected no loading indicator once user initiated loading completes with error")
     }
     
+    
     //    func test_loadFeedCompletion_rendersSuccessfullyLoadedFeed() {
     //        let (sut, loader) = makeSUT()
     //        let image0 = makeImage(description: "a description", location: "a location")
@@ -255,6 +256,18 @@ final class FeedUIIntegrationTests: XCTestCase {
         loader.completeImageLoading(with: anyImageData())
         
         XCTAssertNil(view?.renderedImage, "Expected no rendered image when an image load finishes after the view is not visible anymore")
+    }
+    
+    func test_loadFeedCompletion_dispatchesFromBackgroundToMainThread() {
+        let (sut, loader) = makeSUT()
+        sut.loadViewIfNeeded()
+
+        let exp = expectation(description: "Wait for background queue")
+        DispatchQueue.global().async {
+            loader.completeFeedLoading(at: 0)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1.0)
     }
     
     //MARK: Helpers
